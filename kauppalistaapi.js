@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const users = require('./services/users')
 app.use(cookieParser());
 var ip = require('ip');
-const ipAddress= ipAddress();
+const ipAddress= ip.address();
 const items = require('./services/items');
 const passport=require('passport');
 const { getItemById } = require('./services/items');
@@ -263,5 +263,5 @@ app.put('/sensors/:id/',(req, res)=>{
 })
 
 app.listen(port, ipAddress, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at ${ipAddress}: ${port}`)
 })
