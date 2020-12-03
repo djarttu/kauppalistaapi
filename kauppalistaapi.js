@@ -4,13 +4,13 @@ const bcrypt = require('bcryptjs');
 //const { v4: uuidv4 } = require('uuid');
 const app = express()
 const port = 3000
-const ipAddress='192.168.1.146'
+const ipAddress= ipAddress();
 const cookieParser =require('cookie-parser')
 require ('dotenv').config()
 app.use(bodyParser.json());
 const users = require('./services/users')
 app.use(cookieParser());
-
+var ip = require('ip');
 const items = require('./services/items');
 const passport=require('passport');
 const { getItemById } = require('./services/items');
